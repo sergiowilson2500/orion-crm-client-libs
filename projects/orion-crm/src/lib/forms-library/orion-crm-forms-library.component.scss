@@ -1,0 +1,43 @@
+@import "../shared/styles/mobile";
+
+:host {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  width: 100%;
+
+  .mat-column-Action {
+    max-width: 120px;
+  }
+
+  .list-header {
+    display: flex;
+
+    @include for-tablet {
+      flex-direction: column
+    }
+  }
+
+  .list-acion-items {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .mobile-label {
+    display: none;
+  }
+
+  .cdk-column-action {
+    max-width: 250px;
+    justify-content: flex-end;
+  }
+
+  @include mat-table-responsive {
+  }
+
+  .action-items {
+    display: flex;
+    justify-content: flex-end;
+    margin: 20px;
+  }
+}

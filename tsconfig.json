@@ -15,6 +15,12 @@
     "downlevelIteration": true,
     "experimentalDecorators": true,
     "moduleResolution": "node",
+    "paths": {
+      "orion-crm": [
+        "dist/orion-crm"
+      ],
+      "@libShared/*": [ "projects/orion-crm/src/lib/shared/*" ]
+    },
     "importHelpers": true,
     "target": "es2020",
     "module": "es2020",
