@@ -1,3 +1,5 @@
+import { IRequestDownloadPaperwork } from "./paperwork.model";
+
 export namespace PaperworkActions {
   export class Loading {
     static type = '[Paperwork] Loading';
@@ -13,6 +15,11 @@ export namespace PaperworkActions {
 
   export class AggragateList {
     static type = '[Paperwork] Aggragate List';
+  }
+
+  export class DownloadPaperwork {
+    static type = '[Paperwork] Download Paperwork';
+    constructor(public readonly request: IRequestDownloadPaperwork) { }
   }
 }
 

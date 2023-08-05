@@ -48,6 +48,6 @@ export class ApiService {
   public post<T>(url: string, body: any, options: HttpApiServiceParams = {}): Observable<T> {
     const headerOptions = this.getHeaders();
     let httpOptions = { ...options, ...headerOptions };
-    return this.httpClient.post<T>(url, body, httpOptions);
+    return this.httpClient.post<T>(`${this.basePath}/${url}`, body, httpOptions);
   }
 }

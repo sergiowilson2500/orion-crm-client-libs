@@ -5,3 +5,8 @@ export interface IPaperworkStateModel {
     records: PaperworkAssignment[];
     paperworkAssignments : PaperworkAssignment[];
   }
+
+export type IRequestDownloadPaperwork = {
+  templateIds: string[];
+  formFields?: any[];
+};

@@ -16,6 +16,7 @@ import { LoginUser } from '@libShared/models';
     authenticated: false,
     user: null,
     repId: null,
+    orionRepId: null,
     authToken: null,
     records: [],
   }
@@ -73,7 +74,7 @@ export class AuthState implements NgxsOnInit {
 
   @Selector()
   static getOrionRepId(state: IAuthStateModel): string | number | null {
-    return state.user?.claims?.oas_entityId;
+    return state.orionRepId;
   }
 
   @Action(AuthActions.Done)
@@ -99,7 +100,8 @@ export class AuthState implements NgxsOnInit {
         if (decrypted) {
           const user = this.getUserFromJson(decrypted);
           const repId = user?.claims?.entityId;
-          ctx.patchState({ user, repId, authenticated: true })
+          const orionRepId = user?.claims?.oas_entityId;
+          ctx.patchState({ user, repId, orionRepId, authenticated: true })
         }
       }
     }

@@ -39,7 +39,10 @@ export class OrionCrmFormsLibraryComponent implements OnInit {
   }
 
   donwload(item: PaperworkAssignment) {
-    console.log(item);
+    if (item.paperworkTemplateId) {
+      const templateIds: Array<string> = [item.paperworkTemplateId];
+      this.store.dispatch(new PaperworkActions.DownloadPaperwork({ templateIds }));
+    }
   }
 
 

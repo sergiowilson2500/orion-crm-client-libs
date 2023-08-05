@@ -11,4 +11,12 @@ export class PaperworkService {
   getAllPaperworkAssignmentsByRep(repId: string | number): Observable<PaperworkAssignment[]> {
     return this.apiService.get<PaperworkAssignment[]>(`/Reps/${repId}/PaperworkAssignments`);
   }
+
+  downloadPaperwork(templateIds: string[], repId: string | number, formFields: any[] = []): Observable<any> {
+    const observe: any = 'response';
+    return this.apiService.post<any>(`paperworktemplates/rep/${repId}?ids=${templateIds.join(",")}`,
+      formFields,
+      { observe, responseType: "blob" as "json" }
+    );
+  }
 }
