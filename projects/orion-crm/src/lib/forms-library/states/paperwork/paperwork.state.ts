@@ -1,19 +1,20 @@
 import { Store, State, Selector, StateContext, Action } from '@ngxs/store';
-import { HttpClient } from '@angular/common/http';
 import { IPaperworkStateModel } from './paperwork.model';
 import { PaperworkActions } from './paperwork.actions';
-import { tap, timeout, mergeMap } from 'rxjs/operators';
+import { tap, mergeMap } from 'rxjs/operators';
 import { Injectable } from '@angular/core';
 import { ApiService, PaperworkService } from '../../services';
 import { AuthState } from '../auth/auth.state';
 import { EMPTY } from 'rxjs';
 import { PaperworkAssignment } from '@libShared/models';
 import { saveAs } from 'file-saver';
+import { MatXtndSnackbarSuccessService } from '@ngjoy/mat-xtnd';
 
 
 @State<IPaperworkStateModel>({
   name: 'paperwork',
   defaults: <IPaperworkStateModel>{
+    busyId: '',
     loading: true,
     records: [],
     paperworkAssignments: []
@@ -24,7 +25,8 @@ export class PaperworkState {
 
   constructor(
     private readonly paperworkService: PaperworkService,
-    private readonly store: Store
+    private readonly store: Store,
+    private readonly snackbarService: MatXtndSnackbarSuccessService 
   ) { }
 
   @Selector()
@@ -42,10 +44,16 @@ export class PaperworkState {
     return state.paperworkAssignments;
   }
 
+  @Selector()
+  static getBusyId(state: IPaperworkStateModel): string {
+    return state.busyId;
+  }
+
   @Action(PaperworkActions.Done)
   onDone(ctx: StateContext<IPaperworkStateModel>) {
     ctx.patchState({
-      loading: false
+      loading: false,
+      busyId: ''
     });
   }
   @Action(PaperworkActions.Loading)
@@ -75,6 +83,12 @@ export class PaperworkState {
 
   }
 
+  @Action(PaperworkActions.SetBusyId)
+  onBusyId(ctx: StateContext<IPaperworkStateModel>, action: PaperworkActions.SetBusyId) {
+    const { id: busyId } = action;
+    ctx.patchState({ busyId })
+  }
+
   @Action(PaperworkActions.AggragateList)
   onAggragateList(ctx: StateContext<IPaperworkStateModel>) {
     const { records } = ctx.getState();
@@ -96,12 +110,17 @@ export class PaperworkState {
       return EMPTY;
     }
 
-    return this.paperworkService.downloadPaperwork(action.request.templateIds, repId).pipe(
+    return ctx.dispatch(new PaperworkActions.SetBusyId(action.request.templateIds[0])).pipe(
+      mergeMap(() => this.paperworkService.downloadPaperwork(action.request.templateIds, repId)),
       tap(response => {
         const blob = new Blob([response.body], { type: response.headers.get('Content-Type') });
         saveAs(blob, response.headers.get("Content-FileName"));
-      })
+        this.snackbarService.Open('Paperwork Downloaded Successfully');
+      }),
+      mergeMap(() => ctx.dispatch(new PaperworkActions.Done()))
     )
+
+    
   }
 
 

@@ -18,7 +18,7 @@ export class OrionCrmFormsLibraryComponent implements OnInit {
   @Select(AuthState.IsAuthenticated) authenticated$: Observable<boolean> | undefined;
   @Select(PaperworkState.IsLoading) loading$: Observable<boolean> | undefined;
   @Select(PaperworkState.getPaperworkAssignments) items$: Observable<PaperworkAssignment[]> | undefined;
-  @ViewChild(MatPaginator, {static: false}) paginator!: MatPaginator;
+  @Select(PaperworkState.getBusyId) busyId$: Observable<string> | undefined;
  
   listColumns = ['TemplateName', 'Action'];
 

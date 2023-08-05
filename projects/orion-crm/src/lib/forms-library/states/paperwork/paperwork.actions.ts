@@ -21,6 +21,11 @@ export namespace PaperworkActions {
     static type = '[Paperwork] Download Paperwork';
     constructor(public readonly request: IRequestDownloadPaperwork) { }
   }
+
+  export class SetBusyId {
+    static type = '[Paperwork] Set Busy Id';
+    constructor(public readonly id: string) { }
+  }
 }
 
 

@@ -5,6 +5,11 @@
   flex: 1;
   flex-direction: column;
   width: 100%;
+  .download-signal{
+      opacity:0.8;
+      font-size:12px;
+      margin-left:10px;
+  }
 
   .mat-column-Action {
     max-width: 120px;
