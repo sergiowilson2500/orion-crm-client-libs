@@ -37,6 +37,7 @@
     "@angular/cli": "~14.2.12",
     "@angular/compiler-cli": "^14.2.0",
     "@types/jasmine": "~4.0.0",
+    "cz-conventional-changelog": "^3.3.0",
     "jasmine-core": "~4.3.0",
     "karma": "~6.4.0",
     "karma-chrome-launcher": "~3.1.0",
@@ -45,5 +46,10 @@
     "karma-jasmine-html-reporter": "~2.0.0",
     "ng-packagr": "^14.2.0",
     "typescript": "~4.7.2"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
 }
