@@ -1,5 +1,5 @@
 {
-  "name": "orion-crm",
+  "name": "@ngjoy/orion-crm",
   "version": "14.0.0",
   "peerDependencies": {
     "@angular/common": "^14.2.0",
