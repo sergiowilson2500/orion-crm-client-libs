@@ -19,6 +19,9 @@
       "orion-crm": [
         "dist/orion-crm"
       ],
+      "orion-auth": [
+        "dist/orion-auth"
+      ],
       "@libShared/*": [ "projects/orion-crm/src/lib/shared/*" ]
     },
     "importHelpers": true,

@@ -7,7 +7,8 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "build:crm": "ng build orion-crm"
+    "build:crm": "ng build orion-crm",
+    "build:auth": "ng build orion-auth"
   },
   "private": true,
   "dependencies": {

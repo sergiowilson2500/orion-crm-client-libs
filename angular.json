@@ -133,6 +133,37 @@
           }
         }
       }
+    },
+    "orion-auth": {
+      "projectType": "library",
+      "root": "projects/orion-auth",
+      "sourceRoot": "projects/orion-auth/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/orion-auth/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/orion-auth/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/orion-auth/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/orion-auth/src/test.ts",
+            "tsConfig": "projects/orion-auth/tsconfig.spec.json",
+            "karmaConfig": "projects/orion-auth/karma.conf.js"
+          }
+        }
+      }
     }
   }
 }
