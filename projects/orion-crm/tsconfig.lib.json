@@ -7,8 +7,9 @@
     "declarationMap": true,
     "inlineSources": true,
     "types": [],
+    "baseUrl": "src/lib",
     "paths": {
-     
+      "@libShared/*": [ "shared/*" ]
     }
   },
   "exclude": [
