@@ -21,6 +21,10 @@
     {
       "filename": "projects/orion-crm/package.json",
       "type": "json"
+    },
+    {
+      "filename": "projects/orion-auth/package.json",
+      "type": "json"
     }
   ]
 }
