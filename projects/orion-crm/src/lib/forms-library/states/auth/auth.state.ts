@@ -39,7 +39,7 @@ export class AuthState implements NgxsOnInit {
         const decrypted = this.cryptoService.decrypt(userSession);
         if (decrypted) {
           const user = this.getUserFromJson(decrypted);
-          console.log(user);
+          /*console.log(user);*/
           ctx.patchState({ user, authenticated: true })
         }
       }
