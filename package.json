@@ -8,7 +8,9 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "build:crm": "ng build orion-crm",
-    "build:auth": "ng build orion-auth"
+    "build:auth": "ng build orion-auth",
+    "commit": "cz",
+    "release": "standard-version"
   },
   "private": true,
   "dependencies": {
