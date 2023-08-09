@@ -1,6 +1,6 @@
 {
   "name": "orion-crm",
-  "version": "14.0.0",
+  "version": "14.1.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -49,6 +49,7 @@
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.0.0",
     "ng-packagr": "^14.2.0",
+    "standard-version": "^9.5.0",
     "typescript": "~4.7.2"
   },
   "config": {
