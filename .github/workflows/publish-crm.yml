@@ -1,4 +1,4 @@
-name: Publish Lib auth CI
+name: Publish Lib CRM CI
 
 on: [workflow_dispatch]
 
@@ -17,10 +17,10 @@ jobs:
       with:
         node-version: "14.x"
     - run: npm install
-    - run: npm run build:auth
+    - run: npm run build:crm
     - run: npm config set //registry.npmjs.org/:_authToken ${{ secrets.NPM_TOKEN }}
     - name: Publish Ng package on NPM 📦
       run: npm publish --access public
-      working-directory: dist/orion-auth
+      working-directory: dist/orion-crm
       env:
         NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

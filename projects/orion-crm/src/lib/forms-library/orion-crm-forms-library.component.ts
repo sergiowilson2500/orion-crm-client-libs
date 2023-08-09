@@ -1,11 +1,10 @@
-import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Select, Store } from '@ngxs/store';
-import { filter, map, mergeMap, Observable, tap } from 'rxjs';
+import { filter, mergeMap, Observable } from 'rxjs';
 import { PaperworkAssignment } from '../shared/models';
-import { AuthActions } from './states/auth/auth.actions';
 import { PaperworkActions } from './states/paperwork/paperwork.actions';
 import { PaperworkState } from './states/paperwork/paperwork.state';
-import { AuthState } from '@ngjoy/orion-auth'
+import { AuthActions, AuthState } from '@ngjoy/orion-auth'
 
 @Component({
   selector: 'orion-crm-forms-library',
@@ -44,7 +43,6 @@ export class OrionCrmFormsLibraryComponent implements OnInit {
       this.store.dispatch(new PaperworkActions.DownloadPaperwork({ templateIds }));
     }
   }
-
 
 
 } 
