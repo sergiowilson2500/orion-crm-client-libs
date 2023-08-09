@@ -2,7 +2,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { ModuleWithProviders, NgModule } from '@angular/core';
 import { NgxsReduxDevtoolsPluginModule } from '@ngxs/devtools-plugin';
 import { NgxsModule } from '@ngxs/store';
-import { CryptoService } from '@libShared/services';
 import { OrionCrmUnauthorizedComponent } from './components';
 import { formsLibraryConfig, formsLibraryDefaulConfiguration, FORMS_LIBRARY_CONFIG } from './configs/injection-token';
 import { OrionCrmFormsLibraryComponent } from './orion-crm-forms-library.component';
