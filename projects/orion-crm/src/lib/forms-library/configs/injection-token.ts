@@ -10,9 +10,9 @@ export interface formsLibraryConfig{
 } 
 
 export const formsLibraryDefaulConfiguration: Partial<formsLibraryConfig> = {
-  storageKey: 'ops_lu',
-  development: false,
-  cryptoKey: '9op238s7'
+/*  storageKey: 'ops_lu',*/
+  development: true,
+/*  cryptoKey: '9op238s7'*/
 }
 
 export const FORMS_LIBRARY_CONFIG = new InjectionToken<formsLibraryConfig>(FORMS_LIBRARY_CONFIG_TOKEN);

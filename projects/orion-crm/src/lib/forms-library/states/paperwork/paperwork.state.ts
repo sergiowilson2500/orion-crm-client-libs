@@ -4,11 +4,11 @@ import { PaperworkActions } from './paperwork.actions';
 import { tap, mergeMap } from 'rxjs/operators';
 import { Injectable } from '@angular/core';
 import { ApiService, PaperworkService } from '../../services';
-import { AuthState } from '../auth/auth.state';
 import { EMPTY } from 'rxjs';
 import { PaperworkAssignment } from '@libShared/models';
 import { saveAs } from 'file-saver';
 import { MatXtndSnackbarSuccessService } from '@ngjoy/mat-xtnd';
+import { AuthState } from '@ngjoy/orion-auth';
 
 
 @State<IPaperworkStateModel>({

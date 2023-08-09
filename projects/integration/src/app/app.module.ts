@@ -10,6 +10,7 @@ import { environment } from '../environments/environment';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MaterialComponentsModule } from './modules/material/material.module';
+import { OrionAuthModule } from '@ngjoy/orion-auth';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { MaterialComponentsModule } from './modules/material/material.module';
     AppRoutingModule,
     MaterialComponentsModule,
     NgxsModule.forRoot([]),
+    OrionAuthModule.forRoot(),
     OrionCrmFormsLibraryModule.forRoot({ api: environment.api.url }),
     NgxsReduxDevtoolsPluginModule.forRoot()
   ],
