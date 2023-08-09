@@ -1,17 +1,17 @@
 import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
-import { MatPaginator } from '@angular/material/paginator';
 import { Select, Store } from '@ngxs/store';
 import { filter, map, mergeMap, Observable, tap } from 'rxjs';
 import { PaperworkAssignment } from '../shared/models';
 import { AuthActions } from './states/auth/auth.actions';
-import { AuthState } from './states/auth/auth.state';
 import { PaperworkActions } from './states/paperwork/paperwork.actions';
 import { PaperworkState } from './states/paperwork/paperwork.state';
+import { AuthState } from '@ngjoy/orion-auth'
 
 @Component({
   selector: 'orion-crm-forms-library',
   templateUrl: 'orion-crm-forms-library.component.html',
-  styleUrls: [`orion-crm-forms-library.component.scss`]
+  styleUrls: [`orion-crm-forms-library.component.scss`],
+
 })
 export class OrionCrmFormsLibraryComponent implements OnInit {
 

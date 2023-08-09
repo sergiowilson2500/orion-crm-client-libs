@@ -11,6 +11,7 @@ import { ApiService, PaperworkService } from './services';
 import { CommonModule } from '@angular/common';
 import { MatXtndModule } from '@ngjoy/mat-xtnd';
 import { MaterialComponentsModule } from '../internal-modules/material.module';
+import { OrionAuthModule } from '@ngjoy/orion-auth';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { MaterialComponentsModule } from '../internal-modules/material.module';
     HttpClientModule,
     NgxsModule.forFeature([...getStates()]),
     NgxsReduxDevtoolsPluginModule,
+    OrionAuthModule,
     MatXtndModule,
     MaterialComponentsModule
   ],
@@ -40,7 +42,6 @@ export class OrionCrmFormsLibraryModule {
       ngModule: OrionCrmFormsLibraryModule,
       providers: [
         { provide: FORMS_LIBRARY_CONFIG, useValue: { ...config} },
-        { provide: CryptoService, useClass: CryptoService, useFactory: () => new CryptoService(config!.cryptoKey!) },
        
       ]
     };

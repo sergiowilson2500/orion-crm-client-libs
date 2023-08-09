@@ -1,9 +1,9 @@
 import { HttpBackend, HttpClient, HttpContext, HttpEvent, HttpHeaders, HttpParams } from "@angular/common/http";
 import { Inject, Injectable } from "@angular/core";
+import { AuthState } from "@ngjoy/orion-auth";
 import { Store } from "@ngxs/store";
 import { Observable } from "rxjs";
 import { formsLibraryConfig, FORMS_LIBRARY_CONFIG } from "../configs";
-import { AuthState } from "../states/auth/auth.state";
 
 export type HttpApiServiceParams = {
   headers?: HttpHeaders | {
