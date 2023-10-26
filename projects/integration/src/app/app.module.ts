@@ -11,6 +11,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MaterialComponentsModule } from './modules/material/material.module';
 import { OrionAuthModule } from '@ngjoy/orion-auth';
+/*import { DashboardFinancialsModule } from '@mods/dashboards/financials';*/
+import { LazymoduleModule } from '@mods/lazy/index';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,8 @@ import { OrionAuthModule } from '@ngjoy/orion-auth';
     NgxsModule.forRoot([]),
     OrionAuthModule.forRoot(),
     OrionCrmFormsLibraryModule.forRoot({ api: environment.api.url }),
-    NgxsReduxDevtoolsPluginModule.forRoot()
+    NgxsReduxDevtoolsPluginModule.forRoot(),
+    LazymoduleModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -164,6 +164,68 @@
           }
         }
       }
+    },
+    "dashboards": {
+      "projectType": "library",
+      "root": "projects/dashboards",
+      "sourceRoot": "projects/dashboards/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/dashboards/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/dashboards/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/dashboards/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/dashboards/src/test.ts",
+            "tsConfig": "projects/dashboards/tsconfig.spec.json",
+            "karmaConfig": "projects/dashboards/karma.conf.js"
+          }
+        }
+      }
+    },
+    "lazymodule": {
+      "projectType": "library",
+      "root": "projects/lazymodule",
+      "sourceRoot": "projects/lazymodule/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/lazymodule/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/lazymodule/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/lazymodule/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/lazymodule/src/test.ts",
+            "tsConfig": "projects/lazymodule/tsconfig.spec.json",
+            "karmaConfig": "projects/lazymodule/karma.conf.js"
+          }
+        }
+      }
     }
   }
 }

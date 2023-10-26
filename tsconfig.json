@@ -19,10 +19,18 @@
       "orion-crm": [
         "dist/orion-crm"
       ],
+      "dashboards": [
+        "dist/dashboards"
+      ],
       "orion-auth": [
         "dist/orion-auth"
       ],
-      "@libShared/*": [ "projects/orion-crm/src/lib/shared/*" ]
+      "lazymodule": [
+        "dist/lazymodule"
+      ],
+      "@libShared/*": [ "projects/orion-crm/src/lib/shared/*" ],
+      "@mods/dashboards/*": [ "projects/dashboards/src/lib/*" ],
+      "@mods/lazy/*": [ "projects/lazymodule/src/lib/*" ]
     },
     "importHelpers": true,
     "target": "es2020",

@@ -328,8 +328,32 @@
 
 <div class="content" role="main">
 
-  <orion-crm-forms-library></orion-crm-forms-library>
+  <!--<orion-crm-forms-library></orion-crm-forms-library>-->
 
+  <div class="nav-panel">
+    <button mat-raised-button color="primary" [matMenuTriggerFor]="menu">Nav</button>
+    <mat-menu #menu="matMenu">
+      <button routerLink="dashboard" mat-menu-item>Dashboard</button>
+      <button routerLink="activate-action" mat-menu-item>Activate By Event</button>
+    </mat-menu>
+  </div>
+
+  <div>
+    <router-outlet></router-outlet>
+  </div>
+
+  <!--<div class="dashboard-row">
+    <div class="summary">
+      <lazy-load [key]="keyForMarketSummary"></lazy-load>
+    </div>
+    <div class="financial">
+      <lazy-load [key]="keyForFinancial"></lazy-load>
+    </div>
+  </div>-->
+
+  
+
+  <!--<dashboard-financial></dashboard-financial>-->
 
 </div>
 
