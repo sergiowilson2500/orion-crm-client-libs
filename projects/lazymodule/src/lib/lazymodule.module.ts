@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { LazymoduleComponent } from './lazymodule.component';
+import { BootstrapService } from './services';
 
 @NgModule({
   declarations: [
@@ -8,6 +9,9 @@ import { LazymoduleComponent } from './lazymodule.component';
   ],
   imports: [
     CommonModule
+  ],
+  providers: [
+    BootstrapService
   ],
   exports: [
     LazymoduleComponent
