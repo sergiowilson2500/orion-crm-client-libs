@@ -83,7 +83,6 @@ export class FinancialState implements NgxsOnInit {
   @Action(FinancialStateActions.UpdateParams)
   onUpdateParams(ctx: StateContext<IFinancialStateModel>, action: FinancialStateActions.UpdateParams) {
     const { params } = action;
-    console.log(params);
     ctx.patchState({ boostrapParams: params})
   }
 

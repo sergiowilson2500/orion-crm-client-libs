@@ -1,1 +1,19 @@
-Activate By Api
+
+
+<div class="viewer">
+  <div class="actions">
+    <button mat-raised-button color="primary" (click)="viewApiPayload()">View Payload</button>
+  </div>
+  <div class="css-grid">
+    <ng-container *ngIf="(lazyDashboardComponents$ | async) as items">
+      <ng-container *ngFor="let item of items">
+
+        <lazy-load [key]="item.key" [params]="item.params"></lazy-load>
+
+      </ng-container>
+    </ng-container>
+  </div>
+</div>
+
+
+

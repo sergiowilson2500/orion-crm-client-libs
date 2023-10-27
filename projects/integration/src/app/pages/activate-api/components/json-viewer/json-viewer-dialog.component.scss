@@ -1,0 +1,20 @@
+:host{
+    .header{
+        
+    }
+    .content{
+        margin:20px;
+        form{
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+            .mat-form-field{
+                margin:5px;
+            }
+        }
+        .form-actions{
+            display:flex;
+            justify-content: flex-end;
+        }
+    }
+}
