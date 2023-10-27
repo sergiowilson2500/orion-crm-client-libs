@@ -27,7 +27,7 @@ import { FinancialState } from './states/financial/financial.state';
     ...getComponents()
   ]
 })
-export class DashboardFinancialsModule implements IAsLazyLoadModuleOfBootstrapType<DashboardFinancialComponent> {
+export class DashboardFinancialsModule {
 
   boostrapComponent() {
     return DashboardFinancialComponent

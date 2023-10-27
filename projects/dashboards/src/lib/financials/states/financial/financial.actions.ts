@@ -12,4 +12,8 @@ export namespace FinancialStateActions {
   export class Done {
     static readonly type = '[Financial] Set As Done';
   }
+
+  export class Initialize {
+    static readonly type = '[Financial] Initialize';
+  }
 }

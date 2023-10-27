@@ -1,12 +1,22 @@
-<mat-card class="card">
-  <mat-card-title>
-    Financials
-  </mat-card-title>
-  <div class="card-inner">
-    <p class="amount">$1,958,104.00</p>
-    <p class="percent-label">55% target reached</p>
+
+<ng-container *ngIf="loading$ | async; else done">
+  <div class="loading-panel">
+    <mat-spinner strokeWidth="3" diameter="60"></mat-spinner>
   </div>
-  <div  class="card-icon-wrapper">
-    <mat-icon  role="img"  aria-hidden="true">attach_money</mat-icon>
-  </div>
-</mat-card>
+</ng-container>
+
+<ng-template #done>
+  <mat-card class="card">
+    <mat-card-title>
+      Financials
+    </mat-card-title>
+    <div class="card-inner">
+      <p class="amount">$1,958,104.00</p>
+      <p class="percent-label">55% target reached</p>
+    </div>
+    <div  class="card-icon-wrapper">
+      <mat-icon  role="img"  aria-hidden="true">attach_money</mat-icon>
+    </div>
+  </mat-card>
+</ng-template>
+

@@ -1,6 +1,20 @@
 :host {
   display: flex;
   width: 100%;
+  position: relative;
+
+  .loading-panel {
+    background-color: #e9eaef;
+    opacity:0.5;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #e9eaef;
+    border-style: dashed;
+  }
 
   .card {
     display: flex;

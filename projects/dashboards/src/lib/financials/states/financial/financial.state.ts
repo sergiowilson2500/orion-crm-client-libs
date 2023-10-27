@@ -3,17 +3,20 @@ import { HttpClient } from '@angular/common/http';
 import { IFinancialStateModel } from './financial.model';
 import { FinancialStateActions } from './financial.actions';
 import { Injectable } from '@angular/core';
+import { delay, mergeMap, tap } from 'rxjs';
 
 
 @State<IFinancialStateModel>({
   name: 'financial',
   defaults: <IFinancialStateModel>{
-    loading: false,
+    loading: true,
     working: false,
   }
 })
 @Injectable()
 export class FinancialState {
+
+  static readonly Delay = 2000;
 
   constructor(private readonly httpClient: HttpClient) { }
 
@@ -48,6 +51,14 @@ export class FinancialState {
       loading: false,
       working: false
     })
+  }
+
+  @Action(FinancialStateActions.Initialize)
+  onInitialize(ctx: StateContext<IFinancialStateModel>) {
+    return ctx.dispatch(new FinancialStateActions.Loading()).pipe(
+      delay(FinancialState.Delay),
+      mergeMap(() => ctx.dispatch(new FinancialStateActions.Done()))
+    )
   }
 
 
