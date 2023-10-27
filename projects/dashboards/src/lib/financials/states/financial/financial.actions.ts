@@ -1,3 +1,4 @@
+import { financialBootstrapParams } from "./financial.model";
 
 export namespace FinancialStateActions {
 
@@ -15,5 +16,10 @@ export namespace FinancialStateActions {
 
   export class Initialize {
     static readonly type = '[Financial] Initialize';
+  }
+
+  export class UpdateParams {
+    static readonly type = '[Financial] Update Params';
+    constructor(public params: financialBootstrapParams) { }
   }
 }

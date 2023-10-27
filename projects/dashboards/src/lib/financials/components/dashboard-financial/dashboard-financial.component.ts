@@ -1,6 +1,7 @@
-import { Component, AfterContentInit, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Select, Store } from '@ngxs/store';
 import { Observable } from 'rxjs';
+import { financialBootstrapParams } from '../../states';
 import { FinancialStateActions } from '../../states/financial/financial.actions';
 import { FinancialState } from '../../states/financial/financial.state';
 
@@ -12,6 +13,7 @@ import { FinancialState } from '../../states/financial/financial.state';
 export class DashboardFinancialComponent implements OnInit {
 
   @Select(FinancialState.IsLoading) loading$: Observable<boolean> | undefined;
+  @Select(FinancialState.getBootstrapParams) bootstrapParams$: Observable<financialBootstrapParams> | undefined;
 
   constructor(private readonly store: Store) { }
 

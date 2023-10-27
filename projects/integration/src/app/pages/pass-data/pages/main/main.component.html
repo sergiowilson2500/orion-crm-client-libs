@@ -1,0 +1,13 @@
+<div class="actions">
+  <button mat-raised-button color="primary" (click)="update()">Refresh Bootstrap Params</button>
+</div>
+<div class="viewer">
+  <div class="dashboard">
+
+    <div class="flex-100">
+      <lazy-load [key]="keyForFinancial" [params]="data"></lazy-load>
+    </div>
+
+  </div>
+</div>
+

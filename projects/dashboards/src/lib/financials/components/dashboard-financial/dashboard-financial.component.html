@@ -7,8 +7,12 @@
 
 <ng-template #done>
   <mat-card class="card">
-    <mat-card-title>
+    <mat-card-title class="title">
       Financials
+      <span class="flex-fill"></span>
+      <ng-container *ngIf="bootstrapParams$ | async as d">
+        <span class="label-id">{{d.id}}</span>
+      </ng-container>
     </mat-card-title>
     <div class="card-inner">
       <p class="amount">$1,958,104.00</p>

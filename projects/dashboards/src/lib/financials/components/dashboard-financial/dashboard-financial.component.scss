@@ -23,6 +23,17 @@
     position: relative;
     padding: 15px 25px;
 
+    .title{
+        display:flex;
+        .flex-fill{
+            display:flex;
+            flex:1;
+        }
+        .label-id{
+            opacity:0.5;
+        }
+    }
+
     .card-inner {
       margin-right: 25%;
 
