@@ -1,3 +1,3 @@
 export interface IAsLazyLoadModuleOfBootstrapType<T> {
-  boostrapComponent() : T
+  boostrapComponent(): { new(...args: any[]): T }
 }
