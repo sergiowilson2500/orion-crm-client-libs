@@ -5,13 +5,13 @@
 <div class="viewer">
   <div class="dashboard">
 
-    <ng-container *ngIf="display.lazy1">
+    <ng-container *ngIf="keyForMarketSummary">
       <div class="flex-60">
         <lazy-load [key]="keyForMarketSummary"></lazy-load>
       </div>
     </ng-container>
 
-    <ng-container *ngIf="display.lazy2">
+    <ng-container *ngIf="keyForFinancial">
       <div class="flex-40">
         <lazy-load [key]="keyForFinancial"></lazy-load>
       </div>

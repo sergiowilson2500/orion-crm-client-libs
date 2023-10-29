@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { LazyLoadBroker } from '@mods/lazy/index'
+import { LazyLoadBroker, LoadTypeKey } from '@mods/lazy/index'
 
 @Component({
   selector: 'main',
@@ -8,17 +8,16 @@ import { LazyLoadBroker } from '@mods/lazy/index'
 })
 export class MainComponent {
 
-  keyForFinancial = LazyLoadBroker.Financial;
-  keyForMarketSummary = LazyLoadBroker.MarketSummary;
+  keyForFinancial: LoadTypeKey | null = null;
+  keyForMarketSummary: LoadTypeKey | null = null;
 
-  display = {lazy1: false, lazy2: false}
 
   lazy1() {
-    this.display.lazy1 = true;
+    this.keyForFinancial = LazyLoadBroker.Financial;
   }
 
   lazy2() {
-    this.display.lazy2 = true;
+    this.keyForMarketSummary = LazyLoadBroker.MarketSummary;
   }
 
 } 
