@@ -1,6 +1,6 @@
 import { createNgModule, Injectable, Injector, ViewContainerRef } from "@angular/core";
-import { LoadTypeKey } from "../types";
-import { LazyLoadBroker } from "../utils";
+import { IAsLazyLoadedModule, LoadTypeKey } from "../types";
+import { LazyLoadBroker, AsTypeOf } from "../utils";
 
 export declare interface NgModuleOfType<T> extends Function { new(...args: any[]): T; }
 
@@ -27,7 +27,7 @@ export class BootstrapService {
 
   loadComponent<TModule>(ngModule: NgModuleOfType<TModule>, container: ViewContainerRef) {
     const moduleRef = createNgModule(ngModule, this.injector);
-    const component = (moduleRef.instance as any).boostrapComponent();
+    const component = AsTypeOf<IAsLazyLoadedModule>(moduleRef.instance).boostrapComponent();
     container.clear();
     container.createComponent(component, { ngModuleRef: moduleRef });
   }
