@@ -2,8 +2,16 @@
 
 <div class="viewer">
   <div class="actions">
-    <button mat-raised-button color="primary" (click)="viewApiPayload()">View Payload</button>
+    <button mat-raised-button color="primary" (click)="load()">Load</button>
+    <ng-container *ngIf="loaded">
+      <button mat-raised-button color="primary" (click)="view()">
+        View
+        <mat-icon>account_tree</mat-icon>
+      </button>
+    </ng-container>
+   
   </div>
+
   <div class="css-grid">
     <ng-container *ngIf="(lazyDashboardComponents$ | async) as items">
       <ng-container *ngFor="let item of items">

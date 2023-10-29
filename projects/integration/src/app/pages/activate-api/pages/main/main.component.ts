@@ -10,14 +10,20 @@ import { ApiLikeService, ApiPayloadType } from '../../services';
 })
 export class MainComponent {
 
-  lazyDashboardComponents$: Observable<ApiPayloadType[]> = this.apiService.get();
+  lazyDashboardComponents$: Observable<ApiPayloadType[]> | undefined;
+  loaded: boolean | null = null;
 
   constructor(
     private readonly apiService: ApiLikeService,
     private readonly jsonViewer: JsonViewerDialogService
   ) { }
 
-  viewApiPayload() {
+  load() {
+    this.lazyDashboardComponents$ = this.apiService.get();
+    this.loaded = true;
+  }
+
+  view() {
     this.jsonViewer.OnOpen({ title: 'Api Payload', json: this.apiService.data });
   }
 
